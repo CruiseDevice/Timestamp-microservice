@@ -6,4 +6,4 @@ An attempt to create FreeCodeCamp Timestamp Microservice in django.
 
 - [x] If it does, it returns both the Unix timestamp and the natural language form of that date.
 
-- []  If it does not contain a date or Unix timestamp, it returns null for those properties. 
+- [ ]  If it does not contain a date or Unix timestamp, it returns null for those properties. 
