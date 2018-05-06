@@ -13,9 +13,25 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url,include
 from django.contrib import admin
+
+from microservice.views import display, display1
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(
+        r'^$',
+        include('microservice.urls')
+    ),
+    url(
+        r'^(?P<month>\d{2})-(?P<day>\d{2})-(?P<year>\d{4})/$',
+        display,
+        name='display'
+    ),
+    url(
+        r'^(?P<id>[0-9]+)/$',
+        display1,
+        name='display1'
+    )
 ]
