@@ -16,11 +16,17 @@ Including another URLconf
 from django.urls import path, include, re_path
 from django.contrib import admin
 
-from microservice.views import display, display1
+from microservice.views import display, display1, timestamp_api
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('microservice.urls')),
+    # New unified timestamp API endpoint
+    re_path(
+        r'^api/timestamp/(?P<timestamp_input>.*)/$',
+        timestamp_api,
+        name='timestamp_api'
+    ),
     re_path(
         r'^(?P<month>\d{2})-(?P<day>\d{2})-(?P<year>\d{4})/$',
         display,
