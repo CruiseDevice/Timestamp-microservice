@@ -1,2 +1,4 @@
-Django==1.11.18
-pytz==2018.4
+Django==4.2.7
+pytz==2023.3
+python-dateutil==2.8.2
+python-dotenv==1.0.0
